@@ -6,7 +6,13 @@
     .offer-card {
         @apply w-full h-48 my-3 rounded-xl overflow-hidden shadow-lg flex items-center gap-5;
     }
+
     .offer-card__info {
         @apply flex-1 h-full flex flex-col justify-center items-start gap-4;
     }
+
+    .h1-bold {
+        @apply text-3xl font-quicksand-bold;
+    }
+
 }
