@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .offer-card {
+        @apply w-full h-48 my-3 rounded-xl overflow-hidden shadow-lg flex items-center gap-5;
+    }
+}
