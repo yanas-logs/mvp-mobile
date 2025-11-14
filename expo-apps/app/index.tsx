@@ -1,6 +1,7 @@
-import { FlatList, Pressable, Text, View } from "react-native";
+import { FlatList, Image, Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { offers } from "@/constants";
+import React from "react";
 
 export default function Index() {
   return (
@@ -11,10 +12,14 @@ export default function Index() {
 
           return (
             <View>
-              <Pressable className="offer-card">
-                <Text>
-                  {item.title}
-                </Text>
+              <Pressable className="offer-card" style={{backgroundColor: item.color }}>
+                {({ }) = (
+                  <Fragment>
+                    <View className={"h-full w-1/2"}>
+                      <Image source={item.image} className={"size-full"} resizeMode={"contain"} />
+                    </View>
+                  </Fragment>
+                )}
               </Pressable>
             </View>
           )
