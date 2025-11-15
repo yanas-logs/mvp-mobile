@@ -2,6 +2,7 @@ import { SplashScreen, Stack } from "expo-router";
 import "./global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
+import { AuthProvider } from "../store/auth/AuthContext";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -10,9 +11,18 @@ export default function RootLayout() {
     "Quicksand-Medium": require("../assets/fonts/Quicksand-Medium.ttf"),
     "Quicksand-Regular": require("../assets/fonts/Quicksand-Regular.ttf"),
   });
+
   useEffect(() => {
-    if (Error) throw Error;
-    if (!fontsLoaded) SplashScreen.hideAsync()
-    }, [fontsLoaded, Error]);
-  return <Stack screenOptions={{headerShown: false}}/>;
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) return null;
+
+  return (
+    <AuthProvider>
+      <Stack screenOptions={{ headerShown: false }} />
+    </AuthProvider>
+  );
 }
