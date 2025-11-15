@@ -15,4 +15,17 @@
         @apply text-3xl font-quicksand-bold;
     }
 
+    .paragraph-bold {
+        @apply text-base font-quicksand-bold;
+    }
+
+    .cart-btn {
+        @apply flex items-center justify-center size-10 rounded-full bg-dark-100;
+    }
+
+    .cart-badge {
+        @apply absolute -top-2 -right-1 flex items-center justify-center size-5 bg-primary rounded-full;
+    }
+
+
 }
