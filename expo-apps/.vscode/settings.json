@@ -11,5 +11,9 @@
   },
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "tailwindCSS.includeLanguages": {
+    "css": "css",
+    "postcss": "postcss"
   }
 }
